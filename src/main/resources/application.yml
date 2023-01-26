@@ -11,6 +11,11 @@ spring:
             hibernate:
                 format_sql: true
                 #show_sql: true
+    h2:
+        console:
+            enabled: true
+            settings:
+                web-allow-others: true  # 추가
 
 logging:
     level:
