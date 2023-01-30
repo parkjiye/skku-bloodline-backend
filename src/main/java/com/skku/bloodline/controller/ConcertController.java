@@ -31,4 +31,12 @@ public class ConcertController {
         HttpStatus.OK);
   }
 
+  @GetMapping("/api/concerts")
+  public ResponseEntity<?> getConcerts() {
+    return new ResponseEntity<>(
+        BaseResponse.response(
+            HttpStatus.OK, ResponseMessage.GET_CONCERT, concertService.findAllConcerts()),
+        HttpStatus.OK);
+  }
+
 }
