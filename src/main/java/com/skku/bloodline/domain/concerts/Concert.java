@@ -5,15 +5,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDateTime;
+import java.sql.Blob;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.type.descriptor.java.BlobJavaType;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Concerts {
+public class Concert {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,16 +23,18 @@ public class Concerts {
   @Column(length = 500, nullable = false)
   private String title;
 
-  private LocalDateTime date;
-  private String place;
-  private int stage;
+  @Column private String date;
+  @Column private String place;
+  @Column private int stage;
+  @Column private String image;
 
   @Builder
-  public Concerts(Long id, String title, LocalDateTime date, String place, int stage) {
+  public Concert(Long id, String title, String date, String place, int stage, String image) {
     this.id = id;
     this.title = title;
     this.date = date;
     this.place = place;
     this.stage = stage;
+    this.image = image;
   }
 }
