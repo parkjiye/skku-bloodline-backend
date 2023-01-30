@@ -1,8 +1,12 @@
 package com.skku.bloodline.dto.base;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 import org.springframework.http.HttpStatus;
 
+@Getter
+@ToString
 public class BaseResponse<T> {
   private HttpStatus statusCode;
   private String message;
