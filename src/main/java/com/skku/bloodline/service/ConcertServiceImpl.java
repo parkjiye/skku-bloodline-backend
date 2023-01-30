@@ -2,10 +2,11 @@ package com.skku.bloodline.service;
 
 import com.skku.bloodline.domain.concerts.Concert;
 import com.skku.bloodline.dto.request.CreateConcertDTO;
+import com.skku.bloodline.dto.response.ConcertResponseDTO;
 import com.skku.bloodline.repository.ConcertRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Value;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,4 +22,8 @@ public class ConcertServiceImpl implements ConcertService {
     return concertRepository.save(createConcertDTO.toEntity()).getId();
   }
 
+  @Override
+  public List<ConcertResponseDTO> findAllConcerts() {
+    return concertRepository.findAll().stream().map(Concert::toEntity).collect(Collectors.toList());
+  }
 }
