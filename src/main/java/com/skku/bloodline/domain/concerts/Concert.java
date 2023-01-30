@@ -1,15 +1,14 @@
 package com.skku.bloodline.domain.concerts;
 
+import com.skku.bloodline.dto.response.ConcertResponseDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.sql.Blob;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.type.descriptor.java.BlobJavaType;
 
 @Getter
 @NoArgsConstructor

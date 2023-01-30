@@ -3,7 +3,6 @@ package com.skku.bloodline.dto.request;
 import com.skku.bloodline.domain.concerts.Concert;
 import lombok.Builder;
 import lombok.Getter;
-import org.hibernate.type.descriptor.java.BlobJavaType;
 
 @Getter
 public class CreateConcertDTO {
