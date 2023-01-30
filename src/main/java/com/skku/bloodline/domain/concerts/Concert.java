@@ -36,4 +36,14 @@ public class Concert {
     this.stage = stage;
     this.image = image;
   }
+
+  public ConcertResponseDTO toEntity() {
+    return ConcertResponseDTO.builder()
+        .title(title)
+        .date(date)
+        .place(place)
+        .stage(stage)
+        .image(image)
+        .build();
+  }
 }
