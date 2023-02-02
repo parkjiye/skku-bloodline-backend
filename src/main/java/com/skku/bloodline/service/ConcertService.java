@@ -8,4 +8,6 @@ public interface ConcertService {
   Long saveConcert(CreateConcertDTO createConcertDTO);
 
   List<ConcertResponseDTO> findAllConcerts();
+
+  ConcertResponseDTO findById(Long concertUUID);
 }

@@ -1,6 +1,6 @@
 package com.skku.bloodline.service;
 
-import com.skku.bloodline.domain.concerts.Concert;
+import com.skku.bloodline.domain.Concert;
 import com.skku.bloodline.dto.request.CreateConcertDTO;
 import com.skku.bloodline.dto.response.ConcertResponseDTO;
 import com.skku.bloodline.repository.ConcertRepository;
@@ -25,5 +25,12 @@ public class ConcertServiceImpl implements ConcertService {
   @Override
   public List<ConcertResponseDTO> findAllConcerts() {
     return concertRepository.findAll().stream().map(Concert::toEntity).collect(Collectors.toList());
+  }
+
+  @Override
+  public ConcertResponseDTO findById(Long concertUUID) {
+    Concert concert =
+        concertRepository.findById(concertUUID).orElseThrow(IllegalArgumentException::new);
+    return concert.toEntity();
   }
 }
