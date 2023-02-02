@@ -1,4 +1,4 @@
-package com.skku.bloodline.domain.concerts;
+package com.skku.bloodline.domain;
 
 import com.skku.bloodline.dto.response.ConcertResponseDTO;
 import jakarta.persistence.Column;
