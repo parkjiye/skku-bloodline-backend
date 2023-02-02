@@ -7,6 +7,7 @@ import com.skku.bloodline.service.ConcertService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,4 +40,11 @@ public class ConcertController {
         HttpStatus.OK);
   }
 
+  @GetMapping("/api/concerts/{concertUUID}")
+  public ResponseEntity<?> getConcert(@PathVariable("concertUUID") Long concertUUID) {
+    return new ResponseEntity<>(
+        BaseResponse.response(
+            HttpStatus.OK, ResponseMessage.GET_CONCERT, concertService.findById(concertUUID)),
+        HttpStatus.OK);
+  }
 }
