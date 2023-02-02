@@ -1,6 +1,6 @@
 package com.skku.bloodline.dto.request;
 
-import com.skku.bloodline.domain.concerts.Concert;
+import com.skku.bloodline.domain.Concert;
 import lombok.Builder;
 import lombok.Getter;
 
