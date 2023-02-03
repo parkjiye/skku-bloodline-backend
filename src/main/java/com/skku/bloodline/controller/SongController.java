@@ -35,3 +35,11 @@ public class SongController {
         HttpStatus.OK);
   }
 
+  @GetMapping("/api/songs/{songUUID}")
+  public ResponseEntity<?> getConcert(@PathVariable("songUUID") Long songUUID) {
+    return new ResponseEntity<>(
+        BaseResponse.response(
+            HttpStatus.OK, ResponseMessage.GET_SONG, songService.findById(songUUID)),
+        HttpStatus.OK);
+  }
+}
