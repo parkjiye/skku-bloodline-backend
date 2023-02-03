@@ -27,4 +27,12 @@ public class TeamController {
             HttpStatus.OK, ResponseMessage.POST_TEAM, teamService.saveTeam(createTeamDTO)),
         HttpStatus.OK);
   }
+
+  @GetMapping("/api/teams")
+  public ResponseEntity<?> getTeams() {
+    return new ResponseEntity<>(
+        BaseResponse.response(HttpStatus.OK, ResponseMessage.GET_TEAM, teamService.findAllTeams()),
+        HttpStatus.OK);
+  }
+
 }
