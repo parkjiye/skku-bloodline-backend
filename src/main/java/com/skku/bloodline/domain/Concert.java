@@ -39,6 +39,7 @@ public class Concert {
 
   public ConcertResponseDTO toEntity() {
     return ConcertResponseDTO.builder()
+        .id(id)
         .title(title)
         .date(date)
         .place(place)
