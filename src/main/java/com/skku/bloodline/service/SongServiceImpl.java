@@ -22,3 +22,8 @@ public class SongServiceImpl implements SongService {
     return songRepository.save(createSongDTO.toEntity()).getId();
   }
 
+  @Override
+  public List<SongResponseDTO> findAllSongs() {
+    return songRepository.findAll().stream().map(Song::toEntity).collect(Collectors.toList());
+  }
+

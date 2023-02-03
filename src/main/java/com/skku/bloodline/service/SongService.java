@@ -6,3 +6,7 @@ import java.util.List;
 
 public interface SongService {
   Long saveSong(CreateSongDTO createSongDTO);
+
+  List<SongResponseDTO> findAllSongs();
+
+}
