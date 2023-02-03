@@ -9,4 +9,5 @@ public interface SongService {
 
   List<SongResponseDTO> findAllSongs();
 
+  SongResponseDTO findById(Long songUUID);
 }
