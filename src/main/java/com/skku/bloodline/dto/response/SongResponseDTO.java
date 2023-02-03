@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public class SongResponseDTO {
-
+  private Long id;
   private String title;
   private String singer;
 
@@ -19,6 +19,7 @@ public class SongResponseDTO {
 
   @Builder
   public SongResponseDTO(
+      Long id,
       String title,
       String singer,
       String team,
@@ -26,6 +27,7 @@ public class SongResponseDTO {
       String videoLink,
       String image,
       String description) {
+    this.id = id;
     this.title = title;
     this.singer = singer;
     this.team = team;
