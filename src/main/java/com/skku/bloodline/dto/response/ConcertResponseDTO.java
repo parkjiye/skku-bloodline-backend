@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public class ConcertResponseDTO {
+  private Long id;
   private String title;
   private String date;
   private String place;
@@ -14,7 +15,9 @@ public class ConcertResponseDTO {
   private String image;
 
   @Builder
-  public ConcertResponseDTO(String title, String date, String place, int stage, String image) {
+  public ConcertResponseDTO(
+      Long id, String title, String date, String place, int stage, String image) {
+    this.id = id;
     this.title = title;
     this.date = date;
     this.place = place;
