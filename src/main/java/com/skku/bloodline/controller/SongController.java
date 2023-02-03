@@ -28,3 +28,10 @@ public class SongController {
         HttpStatus.OK);
   }
 
+  @GetMapping("/api/songs")
+  public ResponseEntity<?> getSongs() {
+    return new ResponseEntity<>(
+        BaseResponse.response(HttpStatus.OK, ResponseMessage.GET_SONG, songService.findAllSongs()),
+        HttpStatus.OK);
+  }
+
