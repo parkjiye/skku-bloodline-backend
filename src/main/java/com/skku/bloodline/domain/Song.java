@@ -52,6 +52,7 @@ public class Song {
 
   public SongResponseDTO toEntity() {
     return SongResponseDTO.builder()
+        .id(id)
         .title(title)
         .singer(singer)
         .team(team)
