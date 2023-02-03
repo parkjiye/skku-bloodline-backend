@@ -18,22 +18,36 @@ public class Song {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(length = 500, nullable = false)
+  @Column(nullable = false)
   private String title;
 
   @Column private String singer;
   @Column private String team;
   @Column private String concert;
   @Column private String videoLink;
+  @Column private String image;
+
+  @Column(length = 500)
+  private String description;
 
   @Builder
-  public Song(Long id, String title, String singer, String team, String concert, String videoLink) {
+  public Song(
+      Long id,
+      String title,
+      String singer,
+      String team,
+      String concert,
+      String videoLink,
+      String image,
+      String description) {
     this.id = id;
     this.title = title;
     this.singer = singer;
     this.team = team;
     this.concert = concert;
     this.videoLink = videoLink;
+    this.image = image;
+    this.description = description;
   }
 
   public SongResponseDTO toEntity() {
@@ -43,6 +57,8 @@ public class Song {
         .team(team)
         .concert(concert)
         .videoLink(videoLink)
+        .image(image)
+        .description(description)
         .build();
   }
 }
