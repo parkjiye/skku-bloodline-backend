@@ -14,14 +14,24 @@ public class SongResponseDTO {
   private String team;
   private String concert;
   private String videoLink;
+  private String image;
+  private String description;
 
   @Builder
   public SongResponseDTO(
-      String title, String singer, String team, String concert, String videoLink) {
+      String title,
+      String singer,
+      String team,
+      String concert,
+      String videoLink,
+      String image,
+      String description) {
     this.title = title;
     this.singer = singer;
     this.team = team;
     this.concert = concert;
     this.videoLink = videoLink;
+    this.image = image;
+    this.description = description;
   }
 }
