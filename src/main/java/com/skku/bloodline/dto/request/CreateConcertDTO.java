@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public class CreateConcertDTO {
 
+  private Long uuid;
   private String title;
   private String date;
   private String place;
@@ -14,7 +15,9 @@ public class CreateConcertDTO {
   private String image;
 
   @Builder
-  public CreateConcertDTO(String title, String date, String place, int stage, String image) {
+  public CreateConcertDTO(Long uuid, String title, String date, String place, int stage,
+      String image) {
+    this.uuid = uuid;
     this.title = title;
     this.date = date;
     this.place = place;
@@ -22,7 +25,8 @@ public class CreateConcertDTO {
     this.image = image;
   }
 
+
   public Concert toEntity() {
-    return Concert.builder().title(title).date(date).place(place).stage(stage).image(image).build();
+    return Concert.builder().id(uuid).title(title).date(date).place(place).stage(stage).image(image).build();
   }
 }
