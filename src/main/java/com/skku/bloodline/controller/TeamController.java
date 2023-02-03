@@ -35,4 +35,11 @@ public class TeamController {
         HttpStatus.OK);
   }
 
+  @GetMapping("/api/teams/{teamUUID}")
+  public ResponseEntity<?> getTeam(@PathVariable("teamUUID") Long teamUUID) {
+    return new ResponseEntity<>(
+        BaseResponse.response(
+            HttpStatus.OK, ResponseMessage.GET_TEAM, teamService.findById(teamUUID)),
+        HttpStatus.OK);
+  }
 }
