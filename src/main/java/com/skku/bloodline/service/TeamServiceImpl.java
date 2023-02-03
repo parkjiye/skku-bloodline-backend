@@ -22,4 +22,9 @@ public class TeamServiceImpl implements TeamService {
     return teamRepository.save(createTeamDTO.toEntity()).getId();
   }
 
+  @Override
+  public List<TeamResponseDTO> findAllTeams() {
+    return teamRepository.findAll().stream().map(Team::toEntity).collect(Collectors.toList());
+  }
+
 }

@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface TeamService {
   Long saveTeam(CreateTeamDTO createTeamDTO);
+
+  List<TeamResponseDTO> findAllTeams();
+
 }
