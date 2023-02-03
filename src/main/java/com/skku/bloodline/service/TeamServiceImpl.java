@@ -27,4 +27,9 @@ public class TeamServiceImpl implements TeamService {
     return teamRepository.findAll().stream().map(Team::toEntity).collect(Collectors.toList());
   }
 
+  @Override
+  public TeamResponseDTO findById(Long teamUUID) {
+    Team team = teamRepository.findById(teamUUID).orElseThrow(IllegalArgumentException::new);
+    return team.toEntity();
+  }
 }

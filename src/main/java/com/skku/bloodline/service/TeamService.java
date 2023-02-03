@@ -9,4 +9,5 @@ public interface TeamService {
 
   List<TeamResponseDTO> findAllTeams();
 
+  TeamResponseDTO findById(Long teamUUID);
 }
