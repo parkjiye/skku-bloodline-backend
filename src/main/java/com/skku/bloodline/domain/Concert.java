@@ -19,9 +19,7 @@ public class Concert {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(length = 500, nullable = false)
-  private String title;
-
+  @Column private String title;
   @Column private String date;
   @Column private String place;
   @Column private int stage;
