@@ -28,8 +28,9 @@ public class SongServiceImpl implements SongService {
   }
 
   @Override
-  public SongResponseDTO findById(Long songUUID) {
-    Song song = songRepository.findById(songUUID).orElseThrow(IllegalArgumentException::new);
-    return song.toEntity();
+  public List<SongResponseDTO> findByConcert(String concert) {
+    return songRepository.findByConcert(concert).stream()
+        .map(Song::toEntity)
+        .collect(Collectors.toList());
   }
 }
