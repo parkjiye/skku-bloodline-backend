@@ -12,23 +12,19 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-@Entity
+@Entity(name = "song")
 public class Song {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false)
-  private String title;
-
+  @Column private String title;
   @Column private String singer;
   @Column private String team;
   @Column private String concert;
   @Column private String videoLink;
   @Column private String image;
-
-  @Column(length = 500)
-  private String description;
+  @Column private String description;
 
   @Builder
   public Song(
