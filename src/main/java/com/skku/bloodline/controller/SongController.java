@@ -7,9 +7,9 @@ import com.skku.bloodline.service.SongService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -28,18 +28,19 @@ public class SongController {
         HttpStatus.OK);
   }
 
-  @GetMapping("/api/songs")
-  public ResponseEntity<?> getSongs() {
-    return new ResponseEntity<>(
-        BaseResponse.response(HttpStatus.OK, ResponseMessage.GET_SONG, songService.findAllSongs()),
-        HttpStatus.OK);
-  }
+  //  @GetMapping("/api/songs")
+  //  public ResponseEntity<?> getSongs() {
+  //    return new ResponseEntity<>(
+  //        BaseResponse.response(HttpStatus.OK, ResponseMessage.GET_SONG,
+  // songService.findAllSongs()),
+  //        HttpStatus.OK);
+  //  }
 
-  @GetMapping("/api/songs/{songUUID}")
-  public ResponseEntity<?> getConcert(@PathVariable("songUUID") Long songUUID) {
+  @GetMapping("/api/songs")
+  public ResponseEntity<?> getConcert(@RequestParam(value = "concert") String concert) {
     return new ResponseEntity<>(
         BaseResponse.response(
-            HttpStatus.OK, ResponseMessage.GET_SONG, songService.findById(songUUID)),
+            HttpStatus.OK, ResponseMessage.GET_SONG, songService.findByConcert(concert)),
         HttpStatus.OK);
   }
 }
