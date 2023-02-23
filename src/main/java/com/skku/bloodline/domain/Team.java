@@ -18,12 +18,8 @@ public class Team {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(nullable = false)
-  private String teamName;
-
-  @Column(length = 1000)
-  private String description;
-
+  @Column private String teamName;
+  @Column private String description;
   @Column private String image;
 
   @Builder
