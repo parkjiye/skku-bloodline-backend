@@ -31,9 +31,9 @@ spring:
             on-profile: "db-dev"
     datasource:
         driver-class-name: org.mariadb.jdbc.Driver
-        url: jdbc:mariadb://skku-bloodline-db.czzz43eadl5o.ap-northeast-2.rds.amazonaws.com/skku_bloodline?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
-        username: admin
-        password: qwer1234
+        url: ${DB_URL}
+        username: ${DB_UN}
+        password: ${DB_PW}
     jpa:
         database-platform: org.hibernate.dialect.MySQL57Dialect
         hibernate:
