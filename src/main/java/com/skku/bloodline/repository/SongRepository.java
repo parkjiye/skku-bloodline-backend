@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface SongRepository extends JpaRepository<Song, Long> {
 
-  @Query("SELECT a FROM song a " + "WHERE a.concert = :concert")
-  List<Song> findByConcert(@Param("concert") String concert);
+  @Query("SELECT a FROM song a " + "WHERE a.concert_id = :concert_id")
+  List<Song> findByConcert(@Param("concert_id") Long concert_id);
+
 }
