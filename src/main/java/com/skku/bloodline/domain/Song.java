@@ -20,8 +20,8 @@ public class Song {
 
   @Column private String title;
   @Column private String singer;
-  @Column private String team;
-  @Column private String concert;
+  @Column private Long team_id;
+  @Column private Long concert_id;
   @Column private String videoLink;
   @Column private String image;
   @Column private String description;
@@ -31,16 +31,16 @@ public class Song {
       Long id,
       String title,
       String singer,
-      String team,
-      String concert,
+      Long team_id,
+      Long concert_id,
       String videoLink,
       String image,
       String description) {
     this.id = id;
     this.title = title;
     this.singer = singer;
-    this.team = team;
-    this.concert = concert;
+    this.team_id = team_id;
+    this.concert_id = concert_id;
     this.videoLink = videoLink;
     this.image = image;
     this.description = description;
@@ -51,8 +51,8 @@ public class Song {
         .id(id)
         .title(title)
         .singer(singer)
-        .team(team)
-        .concert(concert)
+        .team_id(team_id)
+        .concert_id(concert_id)
         .videoLink(videoLink)
         .image(image)
         .description(description)
