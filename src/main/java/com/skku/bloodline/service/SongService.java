@@ -7,7 +7,7 @@ import java.util.List;
 public interface SongService {
   Long saveSong(CreateSongDTO createSongDTO);
 
-  List<SongResponseDTO> findAllSongs();
+  List<SongResponseDTO> findByTeam(Long team_id);
 
   List<SongResponseDTO> findByConcert(String concert);
 }

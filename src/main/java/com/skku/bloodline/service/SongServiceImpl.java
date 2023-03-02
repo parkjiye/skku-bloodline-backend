@@ -23,8 +23,10 @@ public class SongServiceImpl implements SongService {
   }
 
   @Override
-  public List<SongResponseDTO> findAllSongs() {
-    return songRepository.findAll().stream().map(Song::toEntity).collect(Collectors.toList());
+  public List<SongResponseDTO> findByTeam(Long team_id) {
+    return songRepository.findByTeam(team_id).stream()
+        .map(Song::toEntity)
+        .collect(Collectors.toList());
   }
 
   @Override
