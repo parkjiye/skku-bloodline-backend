@@ -36,11 +36,12 @@ public class SongController {
         HttpStatus.OK);
   }
 
-  @GetMapping("/api/songs")
-  public ResponseEntity<?> getConcert(@RequestParam(value = "concert") String concert) {
+  @GetMapping("/api/songs/concerts")
+  public ResponseEntity<?> getSongsByConcertId(
+      @RequestParam(value = "concert_id") Long concert_id) {
     return new ResponseEntity<>(
         BaseResponse.response(
-            HttpStatus.OK, ResponseMessage.GET_SONG, songService.findByConcert(concert)),
+            HttpStatus.OK, ResponseMessage.GET_SONG, songService.findByConcert(concert_id)),
         HttpStatus.OK);
   }
 }
