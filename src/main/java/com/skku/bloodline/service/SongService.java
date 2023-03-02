@@ -9,5 +9,5 @@ public interface SongService {
 
   List<SongResponseDTO> findByTeam(Long team_id);
 
-  List<SongResponseDTO> findByConcert(String concert);
+  List<SongResponseDTO> findByConcert(Long concert_id);
 }

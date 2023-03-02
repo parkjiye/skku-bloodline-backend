@@ -30,8 +30,8 @@ public class SongServiceImpl implements SongService {
   }
 
   @Override
-  public List<SongResponseDTO> findByConcert(String concert) {
-    return songRepository.findByConcert(concert).stream()
+  public List<SongResponseDTO> findByConcert(Long concert_id) {
+    return songRepository.findByConcert(concert_id).stream()
         .map(Song::toEntity)
         .collect(Collectors.toList());
   }
