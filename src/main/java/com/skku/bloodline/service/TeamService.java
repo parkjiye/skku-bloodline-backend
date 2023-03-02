@@ -9,5 +9,5 @@ public interface TeamService {
 
   List<TeamResponseDTO> findAllTeams();
 
-  TeamResponseDTO findById(Long teamUUID);
+  List<TeamResponseDTO> findByConcert(Long concert_id);
 }

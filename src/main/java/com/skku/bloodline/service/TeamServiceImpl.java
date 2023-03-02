@@ -28,8 +28,9 @@ public class TeamServiceImpl implements TeamService {
   }
 
   @Override
-  public TeamResponseDTO findById(Long teamUUID) {
-    Team team = teamRepository.findById(teamUUID).orElseThrow(IllegalArgumentException::new);
-    return team.toEntity();
+  public List<TeamResponseDTO> findByConcert(Long concert_id) {
+    return teamRepository.findByConcert(concert_id).stream()
+        .map(Team::toEntity)
+        .collect(Collectors.toList());
   }
 }
